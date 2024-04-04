@@ -1,11 +1,12 @@
 import { useState } from "react";
+console.log("Hello world");
 
 const ToDoList = () => {
   // Rule: Use meaningful and pronounceable variable names
   // ex. todo, setTodo
   const [t, sT] = useState([]);
   const [iV, sIV] = useState("");
-
+  
   // Use explanatory variables
   const addTodo = () => {
     //Avoid Mental Mapping
@@ -17,6 +18,8 @@ const ToDoList = () => {
       sIV("");
     }
   };
+
+  var hello ="hahaha";
 
   // Rule: Functions should do one thing
   //
