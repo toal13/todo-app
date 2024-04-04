@@ -1,24 +1,26 @@
-import { useState } from "react";
+import React, { useState } from 'react';
 
 const ToDoList = () => {
-  // Use meaningful and pronounceable variable names
-  //Use todo,setTodo/ newTodo, setNewTodo
+  // Rule: Use meaningful and pronounceable variable names
+  // 意味のある変数名を使用
   const [t, sT] = useState([]);
-  const [iV, sIV] = useState("");
+  const [iV, sIV] = useState('');
 
-  // Use explanatory variables
-  //
+  // Rule: Use explanatory variables
+  // 説明的な変数を使用
   const addTodo = () => {
-    //Avoid Mental Mapping
-    const isInputValueValid = iV.trim() !== "";
+    // Rule: Avoid Mental Mapping
+    // メンタルマッピングの回避
+    const isInputValueValid = iV.trim() !== '';
     if (isInputValueValid) {
-      // Use the same vocabulary for the same type of variable
+      // Rule: Use the same vocabulary for the same type of variable
+      // 同じタイプの変数には同じ語彙を使用する
       sT([...t, iV]);
-      sIV("");
+      sIV('');
     }
   };
 
-  // Functions should do one thing
+  // Rule: Functions should do one thing
   // 関数は一つのことを行う
   const removeTodo = (index: number) => {
     // Rule: Use default parameters instead of short circuiting or conditionals
@@ -30,7 +32,11 @@ const ToDoList = () => {
   return (
     <div>
       <h1>ToDo List</h1>
-      <input type="text" value={iV} onChange={(e) => sIV(e.target.value)} />
+      <input
+        type="text"
+        value={iV}
+        onChange={(e) => sIV(e.target.value)}
+      />
       <button onClick={addTodo}>Add</button>
       <ul>
         {t.map((todo, index) => (
