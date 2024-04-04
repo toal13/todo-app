@@ -2,15 +2,16 @@ import { useState } from "react";
 console.log("Hello world");
 
 const ToDoList = () => {
-  // Rule: Use meaningful and pronounceable variable names
+  // Use meaningful and pronounceable variable names
   // ex. todo, setTodo
   const [t, sT] = useState([]);
   const [iV, sIV] = useState("");
+  //Unused variables  remove them if you don't use them
+  const [nI, sNI] = useState([]);
   
   // Use explanatory variables
   const addTodo = () => {
     //Avoid Mental Mapping
-    //
     const isInputValueValid = iV.trim() !== "";
     if (isInputValueValid) {
       // Use the same vocabulary for the same type of variable
@@ -19,15 +20,13 @@ const ToDoList = () => {
     }
   };
 
-  var hello ="hahaha";
 
-  // Rule: Functions should do one thing
-  //
+  // Functions should do one thing
   const removeTodo = (index: number) => {
     // Use default parameters instead of short circuiting or conditionals
-    //
-    const updatedTodoList = t.filter((_, ind) => ind !== index);
-    sT(updatedTodoList);
+    // Bad naming name it more easy to understand ex. updatedTodoList
+    const newList = t.filter((_, ind) => ind !== index);
+    sT(newList);
   };
 
   return (
